@@ -23,7 +23,10 @@ class Device(models.Model):
             url = (
                 self.env["ir.config_parameter"].sudo().get_param("edge.monitoring.url")
             )
+            monitoring_url = "
+            if rec.name:
             rec.monitoring_url = url + rec.name
+            rec.monitoring_url = monitoring_url
 
     producttype = fields.Selection(
         [
